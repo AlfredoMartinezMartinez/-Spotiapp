@@ -1,0 +1,60 @@
+
+<div class="container top30">
+
+  <div class="row">
+
+    <div class="col-md-3">
+      <img [src]="artista.images | noimg" class="img-thumbnail img-circle">
+    </div>
+
+    <div class="col-md-9">
+      <h1 class=text-center>{{artista.name}}</h1>
+      <hr>
+      <a [href]="artista.external_urls?.spotify" target="blank" class="btn btn-outline-success">Abrir Spotify</a>
+      <button routerLink="/search" type="button" class="btn btn-outline-danger">Regresar</button>
+    </div>
+
+  </div>
+
+  <div class="row top30">
+    <div class="col-md-12">
+
+      <table class="table table-dark">
+
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Foto</th>
+            <th>Nombre</th>
+            <th>Popularidad</th>
+            <th>Escuchar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of topTrack,let i=index">
+            <td>{{i+1}}</td>
+            <td>
+              <img [src]="item.album.images|noimg" class="img-50">
+            </td>
+            <td>{{item.name}}</td>
+            <td>{{item.popularity}}</td>
+            <td>
+              <!-- <audio controls>
+                <source [src]="item.preview_url" >
+                  Tu navegador es viejo
+              </audio> -->
+              <iframe [src]="item.uri| domseguro:'https://open.spotify.com/embed?uri='" width="300" height="80" frameborder="0" allowtransparency="true">
+              </iframe>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    <!-- </div>
+    <div *ngFor="let item of topTrack" class="col-md-9">
+      <p>{{item.name}};</p>
+    </div>-->
+
+  </div>
+
+</div>
