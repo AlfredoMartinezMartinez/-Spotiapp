@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.8.
 
-##Run Spotiapp
+## Run Spotiapp
 
 Change Sporify token for yours at src/app/services/spotify.service.ts line 9
 
