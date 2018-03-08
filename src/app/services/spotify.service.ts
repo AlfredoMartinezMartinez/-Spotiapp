@@ -9,7 +9,7 @@ export class SpotifyService {
   token:string= 'BQCymvTtgFY9hLOJzpZukDvOYA3wke5o7s7Ib68BWT_-AcRiO0ArqV5kjr2LJ3OFPq4eNZICpRitRzPHEHY';
 
   constructor(public http: HttpClient) {
-  console.log("Servicio de Spotify");
+  // console.log("Servicio de Spotify");
  }
 
   private getHeaders(): HttpHeaders{

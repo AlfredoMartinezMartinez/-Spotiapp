@@ -16,13 +16,13 @@ export class ArtistComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.params
     .map(params=>params['id']).subscribe(id =>{
-      console.log(id);
+      // console.log(id);
       this._spotify.getArtista(id).subscribe(artista =>{
-        console.log(artista);
+        // console.log(artista);
         this.artista=artista;
       });
       this._spotify.getTop(id).map((resp:any)=>resp.tracks).subscribe(pistas =>{
-        console.log(pistas);
+        // console.log(pistas);
         this.topTrack=pistas;
       });
     });
